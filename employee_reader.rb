@@ -1,5 +1,6 @@
 class EmployeeReader
-  attr_accessor :employees
+  include Enumerable
+  attr_reader :employees
 
   def initialize(filename)
     @filename = filename
@@ -24,12 +25,17 @@ class EmployeeReader
     if job == 'Commission'
       CommissionSalesPerson.new(first_name,last_name,salary,commission_rate)
     elsif job == 'Quota'
-      QuotaSalesPerson.new(first_name, last_name, salary, bonus, quota)
+      QuotaSalesPerson.new(first_name,last_name,salary,commission_rate, bonus, quota)
     elsif job == 'Owner'
-      Owner.new(first_name,last_name,salary)
+      Owner.new(first_name,last_name,salary,commission_rate)
     else
-      Employee.new(first_name,last_name,salary)
+      Employee.new(first_name,last_name,salary,commission_rate)
     end
   end
 
+  def each(&block)
+    self.employees.each do |sale|
+      block.call(sale)
+    end
+  end
 end

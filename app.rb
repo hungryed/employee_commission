@@ -14,4 +14,9 @@ sales_info = 'sales_last_month.csv'
 employees = EmployeeReader.new(employee_info_file)
 sales = SaleReader.new(sales_info)
 
+sales.each do |sale|
+  employee_name = employees.find {|employee| sale.name == employee.last_name}
+  employee_name.amount_sold += sale.amount
+end
+
 binding.pry

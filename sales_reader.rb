@@ -1,4 +1,5 @@
 class SaleReader
+  include Enumerable
   attr_accessor :sales
 
  def initialize(filename)
@@ -18,5 +19,11 @@ class SaleReader
   amount = sale_attributes[:gross_sale_value].to_i
   Sale.new(name, amount)
  end
+
+  def each(&block)
+    self.sales.each do |sale|
+      block.call(sale)
+    end
+  end
 
 end
