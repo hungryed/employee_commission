@@ -19,4 +19,10 @@ sales.each do |sale|
   employee_name.amount_sold += sale.amount
 end
 
+employees2 = employees.each do |employee|
+  employee.commission_calculator
+  employee.met_quota?
+  employee.get_net_pay
+end
+
 binding.pry

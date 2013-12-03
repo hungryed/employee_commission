@@ -7,6 +7,14 @@ class QuotaSalesPerson < Employee
     @quota = quota
   end
 
+  def met_quota?
+    add_bonus if @amount_sold >= @quota
+  end
+
+  def add_bonus
+    @net_pay += @bonus
+  end
+
   # def display
   #   super do
   #     puts "no you're a towel"
