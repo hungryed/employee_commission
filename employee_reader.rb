@@ -4,6 +4,7 @@ class EmployeeReader
   def initialize(filename)
     @filename = filename
     @employees = []
+    read_file
   end
 
   def read_file
