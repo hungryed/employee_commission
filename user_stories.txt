@@ -1,0 +1,40 @@
+As an employee
+I want to know my monthly pay
+So that I know how much I'm taking home
+
+  *Employee Net pay is caluculated and displayed
+  *Employee Gross pay is calculated and displayed
+
+=================================
+As an owner
+I want to know if we reach our monthly quota
+So that I can recieve my bonus
+
+  *Monthly Quota should be 250,000
+  *Monthly revenue is calculated
+
+=================================
+As an employee
+I want to know how much I am being taxed
+So that I can file properly at the end of the tax year
+
+  *Salary is taxed
+  *Commission is taxed
+  *Bonus is taxed
+
+=================================
+As an commission based sales person
+I want to know how much commission I am earning
+So that I can be paid the proper amount
+
+  *Commission sales persons commission is calculated
+  *Taxes are removed from commission
+
+=================================
+As a quota based sales person
+I want to know how much I have sold
+So that I know if I am getting my bonus
+
+  *Quota based sales persons bonus is only added after reaching their quota
+
+=================================

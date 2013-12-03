@@ -1,0 +1,3 @@
+class CommissionSalesPerson < Employee
+
+end

@@ -1,0 +1,3 @@
+class QuotaSalesPerson < Employee
+
+end
