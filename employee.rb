@@ -1,4 +1,5 @@
 class Employee
+  # :gross_salary, :net_pay
 
   def initialize(first_name, last_name, salary)
     @first_name = first_name
@@ -14,5 +15,12 @@ class Employee
   def monthly_salary
     @salary / 12
   end
+
+  # def display(&block)
+  #   puts name
+  #   gross_salary
+  #   yield if block_given?
+  #   net pay
+  # end
 
 end

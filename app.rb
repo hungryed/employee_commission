@@ -12,7 +12,6 @@ employee_info_file = 'employee_info.csv'
 sales_info = 'sales_last_month.csv'
 
 employees = EmployeeReader.new(employee_info_file)
-employees2 = employees.make_employee
 sales = SaleReader.new(sales_info)
 
 binding.pry

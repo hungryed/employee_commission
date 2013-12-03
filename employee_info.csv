@@ -1,4 +1,4 @@
-title,first_name,last_name,base_salary,commission,bonus,quota
+job,first_name,last_name,base_salary,commission,bonus,quota
 Developer,Johnny,Smith,80000,0,0,0
 Developer,Jimmy,McMahon,85000,0,0,0
 Commission,Bob,Lob,50000,0.005,0,0
