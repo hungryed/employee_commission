@@ -1,5 +1,5 @@
 require 'csv'
-require 'pry'
+
 require_relative 'employee'
 require_relative 'employee_reader'
 require_relative 'sale'
