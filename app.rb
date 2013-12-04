@@ -1,4 +1,5 @@
 require 'csv'
+require 'pry'
 require_relative 'employee'
 require_relative 'employee_reader'
 require_relative 'sale'
@@ -17,10 +18,13 @@ sales.each do |sale|
   employee_name = employees.find {|employee| sale.name == employee.last_name}
   employee_name.amount_sold += sale.amount
 end
+total_sales = Sale.calculate_total_sales
 
 employees = employees.each do |employee|
+  employee_class = employee.class.to_s
   employee.commission_calculator
-  employee.met_quota? if employee.class.to_s == "QuotaSalesPerson"
+  employee.met_quota? if employee_class == "QuotaSalesPerson"
   employee.get_net_pay
+  employee.company_quota_met?(total_sales) if employee_class == 'Owner'
   employee.display
 end
