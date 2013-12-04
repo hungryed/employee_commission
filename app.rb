@@ -1,4 +1,3 @@
-require 'pry'
 require 'csv'
 require_relative 'employee'
 require_relative 'employee_reader'
@@ -19,10 +18,9 @@ sales.each do |sale|
   employee_name.amount_sold += sale.amount
 end
 
-employees2 = employees.each do |employee|
+employees = employees.each do |employee|
   employee.commission_calculator
-  employee.met_quota?
+  employee.met_quota? if employee.class.to_s == "QuotaSalesPerson"
   employee.get_net_pay
+  employee.display
 end
-
-binding.pry

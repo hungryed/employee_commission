@@ -26,15 +26,13 @@ class Employee
     @gross_salary += @total_commission
   end
 
-  def met_quota?
+  def display
+    puts "***#{@first_name} #{@last_name}***"
+    puts "Gross Salary: #{@gross_salary}"
+    yield if block_given?
+    puts "Net Salary: #{@net_pay}"
+    puts "***************************"
+    puts ""
   end
-
-
-  # def display(&block)
-  #   puts name
-  #   gross_salary
-  #   yield if block_given?
-  #   net pay
-  # end
 
 end

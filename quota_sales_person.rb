@@ -9,15 +9,16 @@ class QuotaSalesPerson < Employee
 
   def met_quota?
     add_bonus if @amount_sold >= @quota
+    @amount_sold >= @quota
   end
 
   def add_bonus
-    @net_pay += @bonus
+    @gross_salary += @bonus
   end
 
-  # def display
-  #   super do
-  #     puts "no you're a towel"
-  #   end
-  # end
+  def display
+    super do
+      puts "Beat Quota by #{@amount_sold - @quota}" if met_quota?
+    end
+  end
 end
